@@ -1,10 +1,19 @@
+import Header from "../components/Header";
+import "../styles/Home.css";
+
 function Home() {
   return (
-    <div>
-      <h1>NeighbourShare</h1>
+    <>
+      <Header />
 
-      <p>Borrow tools from people in your neighbourhood.</p>
-    </div>
+      <section className="hero">
+        <h1>Borrow Tools From Your Neighbours</h1>
+
+        <p>
+          Find useful equipment near you without buying new.
+        </p>
+      </section>
+    </>
   );
 }
 
