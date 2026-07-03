@@ -1,0 +1,37 @@
+.review-container{
+
+max-width:700px;
+margin:50px auto;
+padding:20px;
+
+}
+
+.review-card{
+
+background:white;
+border:1px solid #ddd;
+padding:20px;
+border-radius:8px;
+margin-bottom:30px;
+
+}
+
+.review-buttons{
+
+display:flex;
+justify-content:space-between;
+
+}
+
+.review-buttons a,
+.review-buttons button{
+
+padding:12px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+background:#2e7d32;
+color:white;
+text-decoration:none;
+
+}
