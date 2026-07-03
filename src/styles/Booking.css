@@ -1,0 +1,21 @@
+.booking-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.booking-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-container input {
+  width: 100%;
+  padding: 10px;
+}
+
+.booking-container button {
+  padding: 12px;
+  cursor: pointer;
+}
