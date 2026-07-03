@@ -13,9 +13,19 @@
 .booking-container input {
   width: 100%;
   padding: 10px;
+  border:1px solid #ddd;
+  border-radius:6px;
 }
 
 .booking-container button {
   padding: 12px;
   cursor: pointer;
+  background:var(--primary);
+  color:white;
+  border:none;
+  border-radius:6px;
+}
+
+@media (max-width:600px){
+  .booking-container{margin:30px 12px}
 }

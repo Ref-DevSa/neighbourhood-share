@@ -40,3 +40,12 @@
 }
 
 }
+
+.nav-links .user-name{
+    color: #fff;
+    font-weight:600;
+}
+
+.nav-links li{display:flex;align-items:center}
+
+.link-button{background:transparent;border:none;color:white;cursor:pointer}

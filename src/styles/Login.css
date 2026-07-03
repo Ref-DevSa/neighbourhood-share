@@ -1,0 +1,29 @@
+.login-container{
+	max-width:420px;
+	margin:80px auto;
+	background:white;
+	padding:28px;
+	border-radius:10px;
+	box-shadow: var(--card-shadow);
+}
+
+.login-form{
+	display:flex;
+	flex-direction:column;
+	gap:16px;
+}
+
+.login-form input{
+	padding:10px;
+	border:1px solid #ddd;
+	border-radius:6px;
+}
+
+.login-form button{
+	padding:10px 14px;
+	border-radius:6px;
+	border:none;
+	background:var(--primary);
+	color:#fff;
+	cursor:pointer;
+}

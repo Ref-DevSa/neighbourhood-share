@@ -17,6 +17,14 @@ function Booking() {
   function handleNext(event: React.FormEvent) {
     event.preventDefault();
 
+    if (!startDate || !endDate) return;
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    if (end < start) {
+      alert("End date must be same or after start date.");
+      return;
+    }
+
     navigate("/booking-review", {
       state: {
         item,
