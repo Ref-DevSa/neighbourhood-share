@@ -6,9 +6,7 @@ import { items } from "../data/items";
 function Booking() {
   const { id } = useParams();
 
-  const item = items.find(
-    (currentItem) => currentItem.id === Number(id)
-  );
+  const item = items.find((currentItem) => currentItem.id === Number(id));
 
   const navigate = useNavigate();
 
@@ -21,7 +19,7 @@ function Booking() {
 
     navigate("/booking-review", {
       state: {
-        itemId: id,
+        item,
         startDate,
         endDate,
       },
