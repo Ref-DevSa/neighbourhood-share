@@ -1,20 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
+import "../styles/Confirmation.css";
 
 function Confirmation() {
   const location = useLocation();
-
   const booking = location.state;
 
   return (
-    <main
-      style={{
-        textAlign: "center",
-        marginTop: "80px",
-      }}
-    >
+    <main className="confirmation-container">
       <h1>Booking Confirmed!</h1>
 
-      <p>Your booking has been submitted.</p>
+      <p>Your booking has been submitted successfully.</p>
 
       <p>
         <strong>Start Date:</strong> {booking.startDate}
@@ -24,7 +19,7 @@ function Confirmation() {
         <strong>End Date:</strong> {booking.endDate}
       </p>
 
-      <Link to="/">Return Home</Link>
+      <Link to="/">Back to Home</Link>
     </main>
   );
 }
