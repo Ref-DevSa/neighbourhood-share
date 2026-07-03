@@ -1,32 +1,61 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
+import FilterPanel from "../components/FilterPanel";
+import ItemCard from "../components/ItemCard";
+import { items } from "../data/items";
+import "../styles/Home.css";
 
 function Home() {
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
+  const [distance, setDistance] = useState("");
 
-const [search,setSearch]=useState("");
+  const filteredItems = items.filter((item) => {
+    const matchesSearch = item.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
 
-return(
+    const matchesCategory =
+      category === "" || item.category === category;
 
-<>
-<Header/>
+    const matchesDistance =
+      distance === "" || item.distance <= Number(distance);
 
-<section className="hero">
-<h1>Borrow Tools From Your Neighbours</h1>
+    return matchesSearch && matchesCategory && matchesDistance;
+  });
 
-<p>Find useful equipment near you.</p>
+  return (
+    <>
+      <Header />
 
-<SearchBar
-search={search}
-onSearchChange={setSearch}
-/>
+      <section className="hero">
+        <h1>Borrow Tools From Your Neighbours</h1>
+        <p>Find useful equipment close to home.</p>
 
-</section>
+        <SearchBar
+          search={search}
+          onSearchChange={setSearch}
+        />
 
-</>
+        <FilterPanel
+          category={category}
+          distance={distance}
+          onCategoryChange={setCategory}
+          onDistanceChange={setDistance}
+        />
+      </section>
 
-);
-
+      <section className="item-grid">
+        {filteredItems.map((item) => (
+          <ItemCard
+            key={item.id}
+            item={item}
+          />
+        ))}
+      </section>
+    </>
+  );
 }
 
 export default Home;
